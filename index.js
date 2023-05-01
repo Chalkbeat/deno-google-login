@@ -52,7 +52,6 @@ function authenticate(client) {
               Location: authURL
             }
           });
-          break;
 
         case "/authenticate/":
           var code = url.searchParams.get("code");
@@ -63,8 +62,6 @@ function authenticate(client) {
           setTimeout(() => server.close());
           console.log("Successfully authenticated!");
           return new Response("Authenticated!");
-          server.close();
-          break;
 
         default: return new Response("", { status: 404 });
       }
