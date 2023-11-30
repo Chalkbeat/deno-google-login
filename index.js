@@ -21,8 +21,8 @@ export async function login() {
   }
 
   auth.on("tokens", function(update) {
-    Object.assign(tokens, update);
-    Deno.writeTextFile(tokenFilePath, JSON.stringify(tokens, null, 2));
+    Object.assign(token, update);
+    Deno.writeTextFile(tokenFilePath, JSON.stringify(token, null, 2));
   });
 
   return auth;
